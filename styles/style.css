@@ -1,3 +1,23 @@
+:root {
+  /* Paleta suave */
+  --bg-main: #0f111a;
+  --bg-card: #1c1f2e;
+  --glass: rgba(255,255,255,0.02);
+
+  --text-main: #e6e6f3;
+  --text-muted: #b0b0c2;
+  --text-highlight: #5dd6c2;
+
+  --accent-primary: #5d6dff;   /* roxo azulado */
+  --accent-secondary: #46c7b7; /* verde água */
+
+  --canvas-border: #2d3353;
+  --shadow: 0 4px 12px rgba(0,0,0,0.4);
+  --border-soft: rgba(255,255,255,0.06);
+  --progress-bg: rgba(255,255,255,0.05);
+}
+
+/* Reset */
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -5,99 +25,160 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #0b0b2b;
-  color: #f0f0f0;
-  gap: 40px;
-  padding: 20px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  gap: 28px;
+  padding: 24px;
 }
 
-section {
+/* Cabeçalho */
+header {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Layout */
+main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Canvas */
+.canvas-area {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1e1e3f;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  height: 440px;
+  gap: 12px;
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
-canvas{
-  border-radius: 20px;
+#meuCanvas {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  border: 2px solid var(--canvas-border);
+  background-color: #fff;
+  image-rendering: pixelated;
 }
 
-.head {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 16px;
-  margin-bottom: 20px;
-  gap: 10px;
-}
-
-.head h1 {
-  font-weight: 400;
-}
-
-.head b {
-  font-weight: 600;
-  color: #00ff8b;
-}
-
-img {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
-button {
-  padding: 10px 20px;
+/* Botão */
+#resetBtn {
+  padding: 8px 16px;
   border: none;
-  background-color: #00ff8b;
-  color: #0b0b2b;
-  font-weight: bold;
+  background: var(--accent-primary);
+  color: #fff;
+  font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
-button:hover {
-  background-color: #00d179;
+#resetBtn:hover {
+  background: var(--accent-secondary);
 }
 
+#resetBtn:active {
+  transform: scale(0.97);
+}
+
+/* Painel de previsão */
 .guess {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background-color: #1e1e3f;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  width: 200px;
+  gap: 12px;
+  background: var(--bg-card);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  width: 220px;
+  height: 440px;
+}
+
+.guess h2 {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+/* Linhas */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  order: 1;
+  gap: 8px;
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .row:last-child {
   border-bottom: none;
 }
 
-.row b.percent {
-  color: #00ff8b;
+.row span {
+  width: 18px;
   font-weight: 600;
+  color: var(--text-main);
+}
+
+.bar {
+  flex: 1;
+  height: 6px;
+  background: var(--progress-bg);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-primary);
+  transition: width 0.25s ease;
+}
+
+.percent {
+  width: 50px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-highlight);
+}
+
+/* Destaque mais provável */
+.row.best {
+  background: rgba(255,255,255,0.04);
 }

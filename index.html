@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Plotador com Sliders</title>
+  <title>digitGuess - Neural Network</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
 </head>
-
 <body>
-  <section>
-    <canvas id="meuCanvas" width="28" height="28"
-    style="border:1px solid black; width:280px; height:280px; image-rendering: pixelated;" ></canvas>
+  <header>
+    <h1>DigitGuess</h1>
+    <p>Desenhe um número (0-9) e veja como a rede neural tenta adivinhar.</p>
+  </header>
 
-  </section>
+  <main>
+    <section class="canvas-area">
+      <canvas id="meuCanvas" width="28" height="28"></canvas>
+      <button id="resetBtn">Resetar</button>
+    </section>
 
-  <div class="guess">
-    <div class="row">0 <b class="percent">0%</b></div>
-    <div class="row">1 <b class="percent">0%</b></div>
-    <div class="row">2 <b class="percent">0%</b></div>
-    <div class="row">3 <b class="percent">0%</b></div>
-    <div class="row">4 <b class="percent">0%</b></div>
-    <div class="row">5 <b class="percent">0%</b></div>
-    <div class="row">6 <b class="percent">0%</b></div>
-    <div class="row">7 <b class="percent">0%</b></div>
-    <div class="row">8 <b class="percent">0%</b></div>
-    <div class="row">9 <b class="percent">0%</b></div>
-  </div>
+    <aside class="guess">
+      <h2>Previsão</h2>
+      <div class="rows">
+        <div class="row"><span>0</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>1</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>2</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>3</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>4</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>5</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>6</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>7</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>8</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+        <div class="row"><span>9</span><div class="bar"><div class="fill"></div></div><b class="percent">0%</b></div>
+      </div>
+    </aside>
+  </main>
 
   <script src="./scripts/NeuralNetwork.js"></script>
   <script src="./scripts/utils.js"></script>
+  <script>
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      const canvas = document.getElementById("meuCanvas");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    });
+  </script>
 </body>
-
 </html>
