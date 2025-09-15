@@ -1,26 +1,17 @@
-# 🧠 digitGuess
+# DigitGuess
 
 Este é um projeto de **rede neural do zero**, feita totalmente em **HTML, CSS e JavaScript puro**, sem uso de bibliotecas ou frameworks de machine learning.  
 O objetivo é **estudar redes neurais construindo uma totalmente manual**, capaz de reconhecer dígitos escritos à mão.
 
 ---
 
-## 📸 Demonstrações
+## Demonstração
 
-Aqui vão alguns prints e exemplos do projeto em funcionamento:
-
-> **Interface principal**
-![screenshot da interface](./images/interface.png)
-
-> **Treinamento**
-![print do treinamento](./images/training.png)
-
-> **Resultados**
-![print dos resultados](./images/results.png)
+![vid](https://github.com/user-attachments/assets/994e0a15-1ff4-4502-825f-1d92b458da6e)
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - **Desenhar dígitos** no canvas para testar a rede.  
 - **Rede Neural Manual** implementada em JavaScript.  
@@ -30,7 +21,7 @@ Aqui vão alguns prints e exemplos do projeto em funcionamento:
 
 ---
 
-## 🗂 Estrutura do Projeto
+## Estrutura do Projeto
 
 - `index.html` → Interface para desenhar e testar.  
 - `styles/style.css` → Estilos básicos.  
@@ -42,17 +33,19 @@ Aqui vão alguns prints e exemplos do projeto em funcionamento:
 
 ---
 
-## 📥 Dataset
+## Dataset
+
+<img width="1212" height="750" alt="image" src="https://github.com/user-attachments/assets/3d1bf803-a6e1-4206-8959-9c862008ee32" />
 
 Para rodar corretamente, baixe o dataset aqui:
 
-👉 [Dataset no Google Drive](https://drive.google.com/file/d/1wb-8vF9h7MS1aH42LIOW962UpfPxgFpf/view?usp=sharing)
+[Dataset no Google Drive](https://drive.google.com/file/d/1wb-8vF9h7MS1aH42LIOW962UpfPxgFpf/view?usp=sharing)
 
 Extraia os arquivos na pasta `./dataset/` conforme a estrutura usada em `datasetCreator.js`.
 
 ---
 
-## ⚙️ Como Rodar
+## ⚙Como Rodar
 
 ### 1. Clonar o projeto
 ```bash
@@ -85,7 +78,7 @@ Isso irá treinar a rede e salvar os pesos no arquivo `modelo.json`.
 
 ---
 
-## 📊 Exemplo de Saída
+## Exemplo de Saída
 
 Durante o treino no console:
 
@@ -100,13 +93,13 @@ Na interface web, os resultados aparecem assim:
 ```
 0 → 0.05%
 1 → 0.12%
-2 → 99.72%   ✅
+2 → 99.72%   
 ...
 ```
 
 ---
 
-## 💡 Aprendizados
+## Aprendizados
 
 - Construir uma rede neural **na mão** é ótimo para entender o funcionamento interno:  
   - Forward propagation  
@@ -117,7 +110,7 @@ Na interface web, os resultados aparecem assim:
 
 ---
 
-## 📌 Próximos Passos
+## Próximos Passos
 
 - Melhorar performance do treino.  
 - Criar interface mais amigável.  
@@ -125,6 +118,6 @@ Na interface web, os resultados aparecem assim:
 
 ---
 
-## 🧑‍💻 Autor
+## Autor
 
-Projeto desenvolvido por **[Seu Nome]** com fins de estudo em Inteligência Artificial.  
+Projeto desenvolvido por **Alisson Luis Cordeiro de Arruda** com fins de estudo em Inteligência Artificial.  
