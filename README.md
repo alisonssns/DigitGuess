@@ -7,16 +7,7 @@ O objetivo é **estudar redes neurais construindo uma totalmente manual**, capaz
 
 ## 📸 Demonstrações
 
-Aqui vão alguns prints e exemplos do projeto em funcionamento:
-
-> **Interface principal**
-![screenshot da interface](./images/interface.png)
-
-> **Treinamento**
-![print do treinamento](./images/training.png)
-
-> **Resultados**
-![print dos resultados](./images/results.png)
+![vid](https://github.com/user-attachments/assets/994e0a15-1ff4-4502-825f-1d92b458da6e)
 
 ---
 
@@ -43,6 +34,8 @@ Aqui vão alguns prints e exemplos do projeto em funcionamento:
 ---
 
 ## 📥 Dataset
+
+<img width="1212" height="750" alt="image" src="https://github.com/user-attachments/assets/3d1bf803-a6e1-4206-8959-9c862008ee32" />
 
 Para rodar corretamente, baixe o dataset aqui:
 
