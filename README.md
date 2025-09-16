@@ -1,6 +1,6 @@
 # DigitGuess
 
-Este é um projeto de **rede neural do zero**, feita totalmente em **HTML, CSS e JavaScript puro**, sem uso de bibliotecas ou frameworks de machine learning.  
+Este é um projeto de **rede neural do zero** com o objetivo de adivinhar números a partir de desenhos feito pelo usuário, feita totalmente em **HTML, CSS e JavaScript puro**, sem uso de bibliotecas ou frameworks de machine learning.  
 O objetivo é **estudar redes neurais construindo uma totalmente manual**, capaz de reconhecer dígitos escritos à mão.
 
 ---
